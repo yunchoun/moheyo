@@ -1,12 +1,11 @@
 #  Vue.js(뷰)와 React.js(리액트)를 활용한 프론트엔드 웹개발 과정
 - 훈련기관 : 티아이에스정보기술교육센터학원
 - 훈련기간 : 2023-06-04 ~ 2023-07-16 (3회차)
-- 수업자료 : https://drive.google.com/file/d/1w8Ien4aMvXTomaM3Yy6hXpcx9vQjX5OR/view?usp=drive_link
-
+- 수업자료 : https://drive.google.com/file/d/1xGkjCzlq7qsto_Kf70VBYG1mVEaC6DGA/view?usp=drive_link
 
 # 프리페어레이션
 
-학습에 앞서 준비해야 할 사항을 안내합니다. 
+학습에 앞서 준비해야 할 사항을 안내합니다.
 
 
 ## 선행 학습
@@ -38,7 +37,7 @@
 
 ### 웹 브라우저
 
-강의 중 주로 사용하는 브라우저는 [Google Chrome](https://www.google.com/intl/ko/chrome/)입니다.  
+강의 중 주로 사용하는 브라우저는 [Google Chrome](https://www.google.com/intl/ko/chrome/)입니다.
 다른 웹 브라우저를 사용해도 무방합니다. ([Mozilla Firefox, Microsoft Edge](https://browsehappy.com/) 등)
 
 #### 웹 브라우저 확장
@@ -64,7 +63,7 @@ npx -v
 
 강의 중 명령어 환경에서 사용하는 쉘 스크립트는 [Bash Shell](<https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8)>)입니다.
 
-Windows에서 Bash Shell을 사용하려면 Git Bash 에뮬레이터를 사용하세요.  
+Windows에서 Bash Shell을 사용하려면 Git Bash 에뮬레이터를 사용하세요.
 
 Windows 10 이상 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 설치해 Ubuntu를 사용하는 방법으로 대체할 수 있습니다.
 
