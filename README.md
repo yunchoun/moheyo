@@ -1,4 +1,4 @@
-#  Vue.js 와 React.js 를 활용한 프론트엔드 웹개발 과정
+#  Vue.js(뷰)와 React.js(리액트)를 활용한 프론트엔드 웹개발 과정
 - 훈련기관 : 티아이에스정보기술교육센터학원
 - 훈련기간 : 2023-06-04 ~ 2023-07-16 (3회차)
 - 수업자료 : https://drive.google.com/file/d/1w8Ien4aMvXTomaM3Yy6hXpcx9vQjX5OR/view?usp=drive_link
@@ -25,12 +25,10 @@
 아래 나열된 기술은 수업 시간에 다루는 주제입니다. 가능하다면 사전 학습을 권장합니다.
 
 - [Git](https://git-scm.com/)：버전 관리 시스템
-- [Webpack](https://webpack.js.org/)：모듈 번들러
-- [Babel](https://babeljs.io/)：JavaScript 컴파일러
-- [esbuild](https://esbuild.github.io)
-- [SWC](https://swc.rs/)：엄청 빠른 JavaScript 번들러
 - [ESLint](https://eslint.org/)：JavaScript 린터
 - [Prettier](https://prettier.io/)：코드 포멧터
+- [Babel](https://babeljs.io/)：JavaScript 컴파일러
+- [Webpack](https://webpack.js.org/)：모듈 번들러
 - [Jest](https://jestjs.io/)：테스팅 프레임워크
 
 
@@ -45,8 +43,8 @@
 
 #### 웹 브라우저 확장
 
-- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ko)
 - [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)
+- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ko)
 
 ### 코드 에디터
 
@@ -68,7 +66,7 @@ npx -v
 
 Windows에서 Bash Shell을 사용하려면 Git Bash 에뮬레이터를 사용하세요.  
 
-Windows 10 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 설치해 Ubuntu를 사용하는 방법으로 대체할 수 있습니다.
+Windows 10 이상 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 설치해 Ubuntu를 사용하는 방법으로 대체할 수 있습니다.
 
 
 ## 설문 조사
