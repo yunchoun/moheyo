@@ -1,6 +1,8 @@
 function name(params) {
   console.log('name function');
 }
+name();
+
 const name2 = function (params) {
   console.log('name2 function');
 };

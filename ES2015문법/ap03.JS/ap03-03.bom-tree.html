@@ -14,21 +14,29 @@
 </html>
 
 <script>
-  function name(params) {
+  function func(params) {
     console.log('name function');
   }
+  func();
+
+  function func2(params) {
+    console.log('name function');
+  }
+  func2();
+  
   const name2 = function (params) {
     console.log('name2 function');
-  }
+    return func2;
+  };
+  func(name2);
+
   const obj = {
     a: 1,
-    name2: name2
-  }
+    name2: name2,
+  };
 
   obj.name2();
 
-  const a = 10; // ==> Number Object
-  console.log(a);
 
   const b = new Number(10);
   console.log(b);
@@ -36,6 +44,7 @@
 
   debugger;
 
+  const a = 10; // ==> Number Object
+  console.log(a);
   console.log(a.toString());
-
 </script>
