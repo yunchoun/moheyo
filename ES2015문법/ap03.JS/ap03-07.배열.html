@@ -194,6 +194,20 @@
                     </code>
                 </pre>
         </li>
+
+        <li class="langjs">
+          <h3 class="langjs">RCUD2S: 배열 생성</h3>
+          <p class="langjs">
+            const arr2 = [1,3, 3784, 98, 842, 8230] 배열 생성<br />
+          </p>
+          <ul>
+          </ul>
+          <pre class="langjs">
+                    <code class="langjs">
+
+                    </code>
+                </pre>
+        </li>
         <li class="langjs">
           <h3 class="langjs">RCUD2S: Search. 배열 검색</h3>
           <p class="langjs">
@@ -319,11 +333,21 @@
   console.log(arr); // ['update', 100, "three", undefined, "four", "aaa"]
   debugger;
 
-  // RCUD2S: Search.배열 검색
-  // const arr2 = [1, 3, 3784, 98, 842, 8230] 에서 100이상인 값만 찾으시오.
+  // RCUD2S: 배열 생성
+  // const arr2 = [1, 3, 3784, 98, 842, 8230] 배열 생성
+  const arr2 = [1, 3, 3784, 98, 842, 8230];
+
+  // const arr2 에서 100이상인 값만 찾으시오.
   //   실행결과예시)[3784, 842, 8230]
   // filter() 메서드를 사용하여
-  const arrFilter = arr2.filter();
+  const arrFilter = arr2.filter(function (value, index, array) {
+    console.log(value, index, array);
+    debugger;
+    if (value >= 100) {
+      return true;
+    }
+    return false
+  });
   console.log(arrFilter); //[3784, 842, 8230]
   debugger;
 
@@ -332,7 +356,10 @@
   // 배열 복제.map() 메서드 사용법을 학습한다.
   // const arr2 = [1, 3, 3784, 98, 842, 8230] 의 복제 배열을 만드시오.
   //   map() 메서드를 사용하여
-  const arrMap = arr2.map();
+  const arrMap = arr2.map(function (value, index, array) {
+    console.log(value, index, array);
+    debugger;
+  });
   console.log(arrMap); // [1, 3, 3784, 98, 842, 8230]
   debugger;
 
