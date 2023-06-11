@@ -25,3 +25,21 @@
     변수 중복 선언 불가
     변수 이름 충돌 불가
 */
+
+
+
+let msg = 'global scope';
+
+if (true) {
+  let msg = 'block scope';
+}
+
+function outer() {
+  let msg = 'global scope';
+
+  if (true) {
+    let msg = 'block scope';
+  }
+}
+
+let aa = 'hosting';
