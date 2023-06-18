@@ -326,7 +326,7 @@
             {{ todoItem.todo }}
             <span class="removeBtn"
               type="button"
-              v-on:click="removeTodo(todoItem.id)">
+              v-on:click.stop="removeTodo(todoItem.id)">
               <i class="far fa-trash-alt"
                 aria-hidden="true"></i>
             </span>
@@ -345,3 +345,115 @@
   </body>
 
 </html>
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.7.8/dist/vue.js">/* vue 플러그인 임포트 */</script>
+
+<script>
+  new Vue({
+    /* edtmc^2w */
+    el: '#app',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      newTodoItem: null,
+      showModal: false,
+      todoItems: [
+        { id: 1, todo: "영화보기", done: false },
+        { id: 2, todo: "주말 산책", done: true },
+        { id: 3, todo: "ES6 학습", done: false },
+        { id: 4, todo: "잠실 야구장", done: false }
+      ],
+    },
+    //template: ``,
+    methods: {
+      /* 이벤트 핸들러 등록 + 일반 함수 */
+      clearAll(e) {
+        console.log(e.target);
+
+        this.$data.todoItems = [];
+      },
+
+      checked(done) {
+        if (done == true) {
+          return 'checked'
+        } return null;
+      },
+      doneToggle(id) {
+        //debugger;
+        const newarr = this.$data.todoItems.map((value, index, array) => {
+
+          console.log(value, index, array);
+          if (value.id === id) {
+            value.done = !value.done
+          }
+          return value;
+        });
+        this.$data.todoItems = newarr;
+
+      },
+
+      removeTodo(id) {
+        //debugger;
+        const newarr = this.$data.todoItems.filter((value, index, array) => {
+          if (value.id === id)
+            return false;
+          return true;
+        });
+
+        this.$data.todoItems = newarr;
+
+        // window.event.stopPropagation()
+        // window.event.preventDefault()
+
+      },
+      addTodo(e) {
+
+
+        // 빈문자열일때는 추가되지 못하게
+        //!this.$data.newTodoItem === this.$data.newTodoItem ===null ||
+        //                            this.$data.newTodoItem ===indefined ||
+        //                            this.$data.newTodoItem ==='' ||
+        if (!this.$data.newTodoItem || this.$data.newTodoItem.trim().length <= 0) {
+          this.$data.showModal = !this.$data.showModal;
+          return;
+        }
+
+
+        console.log(e.target);
+        //todoItems.map()과 todoItems.reduce()를 사용하여 max id를 찾는 방법
+        const ids = this.$data.todoItems.map((value, index, array) => {
+          // value === {id,done,todo}
+          return value.id
+        });
+
+
+        //ids에서 최대값 찾기 = > max(), reduce()
+        const maxid = ids.reduce((pvalue, cvalue, index, array) => {
+          //debugger;
+          if (pvalue > cvalue)
+            return pvalue;
+          else
+            return cvalue;
+
+        }, 0);
+
+
+        const newobj = {
+          id: maxid + 1,
+          todo: this.$data.newTodoItem,
+          done: false,
+        }
+
+        //배열에 추가 => push()메서드 또는 spread 연산자
+        //this.$data.todoItems.push(newobj)
+        this.$data.todoItems = [...this.$data.todoItems, newobj];
+
+        // 입력값 newTodoItem 초기화
+        this.$data.newTodoItem = null;
+
+
+      }
+    },
+  });
+
+</script>

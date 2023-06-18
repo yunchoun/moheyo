@@ -106,3 +106,80 @@
   </body>
 
 </html>
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.7.8/dist/vue.js">/* vue 플러그인 임포트 */</script>
+
+
+<script>
+  new Vue({
+    /* edtmc^2w */
+    el: '#app1',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      awesome: true,/*null === false === ''*/
+    },
+
+  });
+  new Vue({
+    /* edtmc^2w */
+    el: '#app2',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      awesome: false,
+
+      // awesome = undefined// undefined == false
+
+    },
+
+  });
+
+  new Vue({
+    /* edtmc^2w */
+    el: '#app3',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      awesome: false,
+    },
+    methods: {
+      clickBind(e) {
+        console.log(e.target);
+        // debugger;
+        this.$data.awesome = !this.$data.awesome
+        // if (awesome == true) {
+        //   this.$data.awesome = false;
+        // } else {
+        //   this.$data.awesome = true
+        // }
+      }
+
+    },
+
+  });
+
+  new Vue({
+    /* edtmc^2w */
+    el: '#app4',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      type: 0,
+    },
+    methods: {
+      clickBind(e) {
+
+        // this.$data.type = this.$data.type + 1;
+        // console.log(this.$data.type);
+        // if (this.$data.type >= 4) {
+        //   this.$data.type = 0
+        // }
+
+        this.$data.type = (this.$data.type + 1) % 4;
+        console.log(this.$data.type);
+
+      }
+
+    },
+  });
+
+
+</script>

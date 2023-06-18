@@ -45,7 +45,7 @@
 
         Object Arrary를 바인딩하는 방법 학습.
         Object Arrary 예시)
-        var objarray = [
+        const objarray = [
             { text: 'One', value: 'A' },
             { text: 'Two', value: 'B' },
             { text: 'Three', value: 'C' },
@@ -55,6 +55,17 @@
             <option value="A"> One </option>
             <option value="B"> Two </option>
             <option value="C"> Three </option>
+        </select>
+
+        const objarray = [
+        { text: '딸기', value: '../images/strawberry.gif' },
+        { text: '바나나', value: '../images/banana.gif' },
+        { text: '사과', value: '../images/apple.gif' },
+        ];
+        <select name="" id="">
+            <option value="../images/strawberry.gif">딸기</option>
+            <option value="../images/banana.gif">바나나</option>
+            <option value="../images/apple.gif">사과</option>
         </select>
 
         [참조]page 105
@@ -105,6 +116,83 @@
       </div>
     </div>
 
+
+    <div id="app3">
+      <div>
+        <h2>Object Arrary rendered with v-for:</h2>
+        <p>
+          const objarray = [
+          { text: '딸기', value: '../images/strawberry.gif' },
+          { text: '바나나', value: '../images/banana.gif' },
+          { text: '사과', value: '../images/apple.gif' },
+          ];
+        </p>
+        <select name=""
+          id="">
+          <option v-for="(option, index) in options"
+            v-bind:key="index"
+            v-bind:value="option.value">
+            {{ option.text }} : {{option.value}}
+          </option>
+        </select>
+      </div>
+    </div>
+
   </body>
 
 </html>
+
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.7.8/dist/vue.js">/* vue 플러그인 임포트 */</script>
+
+<script>
+  new Vue({
+    /* edtmc^2w */
+    el: '#app1',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      systems: ['android', 'ios', 'window'],
+      arr: [1, 2, 3, 4],
+    },
+    //template: ``,
+
+
+  });
+
+
+  new Vue({
+    /* edtmc^2w */
+    el: '#app2',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      options: [
+        { text: 'One', value: 'A' },
+        { text: 'Two', value: 'B' },
+        { text: 'Three', value: 'C' },
+      ],
+
+    },
+    //template: ``,
+
+
+  });
+
+
+  new Vue({
+    /* edtmc^2w */
+    el: '#app3',
+    data: {
+      /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+      options: [
+        { text: '딸기', value: '../images/strawberry.gif' },
+        { text: '바나나', value: '../images/banana.gif' },
+        { text: '사과', value: '../images/apple.gif' },
+      ],
+
+    },
+    //template: ``,
+
+
+  });
+
+</script>
