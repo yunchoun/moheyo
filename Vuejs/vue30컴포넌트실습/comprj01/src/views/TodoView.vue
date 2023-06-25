@@ -77,6 +77,7 @@ export default {
       this.$data.todoItems = newarr;
     },
     removeTodo(id) {
+      debugger;
       const newarr = this.$data.todoItems.filter((value, index, array) => {
         if (value.id === id) return false;
         return true;

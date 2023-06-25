@@ -62,7 +62,7 @@ li.checked {
           type="button"
           class="removeBtn"
           v-bind:data-id="item.id"
-          v-on:click="removeTodo(item, id)"
+          v-on:click="removeTodo(item.id)"
         >
           <i aria-hidden="true" class="far fa-trash-alt"></i>
         </span>
@@ -101,8 +101,8 @@ export default {
       this.$emit('doneToggle', e, id);
     },
     removeTodo(id) {
-      //debugger;
       console.log(id);
+      debugger;
       this.$emit('removeTodo', id);
     },
   },
