@@ -299,10 +299,10 @@
               node: true,
 
               browser: true,
-              commonjs: true,
-              es6: true,
-              es2021: true,
-              jest: true,
+              commonjs: true, /*require() 메서드를 이용한 import 허용*/
+              es6: true, /*es2015 사용 설정*/
+              es2021: true, /*es2021 사용설정*/
+              jest: true, /*jest 검서 허용*/
             },
             extends: [
                 'plugin:vue/essential',
@@ -318,17 +318,17 @@
               'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
               'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
-              'prettier/prettier': ['error', { endOfLine: 'auto' }], /* 라인당 최대 글자 수 설정 */
+              'prettier/prettier': ['error', { endOfLine: 'auto' }], /* 줄바꿈 설정 */
               'linebreak-style': 'off',
               'arrow-parens': ['error', 'always'], /* (a) => {} */
-              'arrow-body-style': 'off', /* 화살표 함수 관련 설정 */
-              'consistent-return': 'off',
-              'func-names': 'off', /* 변수 선언시 var 사용하면 오류 발생 */
+              'arrow-body-style': 'off' /* 화살표 함수 관련 설정 */,
+              'consistent-return': 'off' /* 화살표 함수 자동 리턴 처리 */,
+              'func-names': 'off' /* 변수 선언시 var 사용하면 오류 발생 */,
               'no-shadow': 'off',
-              'no-alert': 'off', /* 변수 선언시 var 사용하면 오류 발생 */
-              'no-var': 'error', /* 변수 선언시 var 사용하면 오류 발생 */
-              'no-unused-vars': 'off',
-              'no-param-reassign': ['error', { props: false }],
+              'no-alert': 'off' /* alert() 메서드 사용하면 오류 발생 */,
+              'no-var': 'error' /* 변수 선언시 var 사용하면 오류 발생 */,
+              'no-unused-vars': 'off' /* 변수 선언 후 미 사용시 오류 처리 */,
+              'no-param-reassign': ['error', { props: false }] /* 함수 매개변수를 변경할 때 오류 처리 */,
             },
             overrides: [
               {
@@ -358,7 +358,7 @@
           useTabs: false /* 탭 대신 spacebar 를 사용 설정 */,
           trailingComma: 'all',
           proseWrap: 'always',
-          bracketSpacing: true,
+          bracketSpacing: true /*[1,2,3]>[ 1,2,3 ]*/,
           jsxSingleQuote: false /*JSX 안에서는 " 을 사용 */,
           quoteProps: 'as-needed',
           endOfLine: 'crlf',
@@ -368,6 +368,7 @@
     step 4-03. 소스 전체에  eslint 규칙에 맞게 포맷팅 변경하기
         정의한 ESLint 룰을 지키고 있지 않은 파일과 내용을 확인하고
         prettier 의 룰에 맞게 코드를 수정 할 수 있습니다.
+        /*lint 가 없을 시 이렇게 넣어야한다*/
         $ ls                            # package.json 이 있는지 확인
         $ npx prettier --check ./src    # ESLint 룰 체크. src 폴더 이하만 검사
         $ npx prettier --write ./src    # ESLint 룰에 맞게 코드 수정. src 폴더 이하만 변경. npm run lint 와 동일
@@ -730,7 +731,7 @@
         2. 1번이 되면 Parent 컴포넌트가 정상 작동되면
             Child 컴포넌트가 화면에 표시되도록 작성한다.
         3. 2번이 되면 Child 컴포넌트에 props를 통해 값을 내려받게 작성 한다.
-            <component-child v-bind:num="counter" />
+            <componentChild v-bind:num="counter" />
             의미: 부모의 counter 변수를 자식에서는 num 변수로 받는다.
         4. 사용자 이벤트를 사용하여 Child 컴포넌트에서
             Parent 컴포넌트로 값을 전달되게 한다.
