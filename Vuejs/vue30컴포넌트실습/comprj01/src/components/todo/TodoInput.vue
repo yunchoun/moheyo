@@ -113,10 +113,33 @@ input:focus {
       type="text"
       placeholder="Type what you have to do"
       v-model="newTodoItem"
+      ref="refNewTodoItem"
     />
     <span class="addContainer" v-on:click="addTodo">
       <i aria-hidden="true" class="addBtn fas fa-plus"></i>
     </span>
+
+    <div
+      class="modal-mask"
+      v-on:keyup.esc="$emit('close')"
+      v-if="showModal"
+      v-on:close="showModal = false"
+    >
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3>경고</h3>
+          </div>
+
+          <div class="modal-footer">
+            <span v-on:click="showModal = false">
+              할 일을 입력하세요.
+              <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -131,14 +154,28 @@ export default {
     /* 컴포넌트 안에서 사용되는 변수 등록. 개별 변수 */
     return {
       newTodoItem: null,
+      showModal: false,
     };
   },
   //template: ``,
   methods: {
     addTodo(e) {
-      //debugger;
+      debugger;
       console.log(e.target);
-      this.$emit('addTodo', e);
+
+      if (
+        !this.$data.newTodoItem ||
+        this.$data.newTodoItem.trim().length <= 0
+      ) {
+        this.$data.showModal = !this.$data.showModal;
+        this.$refs.refNewTodoItem.focus();
+        return;
+      }
+
+      this.$emit('addTodo', e, this.$data.newTodoItem);
+
+      // 입력값 newTodoItem 초기화
+      this.$data.newTodoItem = null;
     },
   },
   components: {},

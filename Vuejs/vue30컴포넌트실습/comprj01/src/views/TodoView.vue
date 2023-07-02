@@ -60,11 +60,34 @@ export default {
       console.log(e.target);
       this.$data.todoItems = [];
     },
-    addTodo(e) {
-      //debugger;
+    addTodo(e, newTodoItem) {
+      debugger;
       console.log(e.target);
       //this.$data.todoItems.push = [];
+
+      const ids = this.$data.todoItems.map((value) => {
+        // value === {id,done,todo}
+        return value.id;
+      });
+
+      //ids에서 최대값 찾기 = > max(), reduce()
+      const maxid = ids.reduce((pvalue, cvalue) => {
+        //debugger;
+        if (pvalue > cvalue) return pvalue;
+        else return cvalue;
+      }, 0);
+
+      const newobj = {
+        id: maxid + 1,
+        todo: newTodoItem,
+        done: false,
+      };
+
+      //배열에 추가 => push()메서드 또는 spread 연산자
+      //this.$data.todoItems.push(newobj)
+      this.$data.todoItems = [...this.$data.todoItems, newobj];
     },
+
     doneToggle(e, id) {
       //debugger;
       const newarr = this.$data.todoItems.map((value, index, array) => {
@@ -78,7 +101,7 @@ export default {
     },
     removeTodo(id) {
       debugger;
-      const newarr = this.$data.todoItems.filter((value, index, array) => {
+      const newarr = this.$data.todoItems.filter((value) => {
         if (value.id === id) return false;
         return true;
       });
