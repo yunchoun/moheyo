@@ -185,7 +185,7 @@
         $ mkdir -p ./src/pages
         $ touch ./src/pages/PageHome.js
 
-        $ mkdir -p ./src/containers/home
+        $ ls
         $ touch ./src/containers/home/HomeContainer.js
 
 
@@ -490,7 +490,7 @@
     step 24-08. TodoFooter 의 handlerClearAll 메서드 작성
         const handlerClearAll = () => {
             console.log(e.target);
-            debugger;
+
 
             // 부모 컴포넌트의 콜백 메서드 callbackClearAll 호출.
             callbackClearAll();
@@ -952,7 +952,7 @@
             // input 에 입력된 값을 가져오기. 어떻게 해야 하나? ==> ref이름.current.속성명
             // value 속성값 가져오기: ref이름.current.value
             // class 속성값 가져오기: ref이름.current.className
-            
+
             // input 태그 입력값 유효성 검사
             // input 태그에 빈 문자열이나 공백이 입력 되는 경우는 modal 창이 출력되게 하시오
 
@@ -961,7 +961,7 @@
             // add 후에 input 태그의 입력 값 지우기.
             // input 의 value 속성에 값을 설정하기. 어떻게 해야 하나? ==> ref이름.current.속성명
             // value 속성값 가져오기: ref이름.current.value
-            
+
 
             // click 이벤트 취소. 버블링 방지
             e.stopPropagation();
